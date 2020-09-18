@@ -1,0 +1,3 @@
+[submodule "chat-replay-downloader"]
+	path = chat-replay-downloader
+	url = https://github.com/lekoOwO/chat-replay-downloader
