@@ -28,14 +28,14 @@ def get_currency_and_amount(s):
 
 global __convertion_rates
 date = datetime.today().strftime('%Y%m%d')
-__convertion_rates_file_name = f"{EXCHANGE_FILE_PREFIX}.{date}.json"
+__convertion_rates_file_name = os.path.join(os.path.dirname(__file__),  f"{EXCHANGE_FILE_PREFIX}.{date}.json")
 
 if os.path.isfile(__convertion_rates_file_name):
     with open(__convertion_rates_file_name) as f:
         __convertion_rates = json.load(f)
 else:
-    for filename in glob.glob(f"./{EXCHANGE_FILE_PREFIX}*"):
-        os.remove(filename) 
+    for filename in glob.glob(os.path.join(os.path.dirname(__file__), f'{EXCHANGE_FILE_PREFIX}*')):
+        os.remove(filename)
     __convertion_rates = requests.get(f'http://api.currencylayer.com/live?access_key={API_KEY}').json()["quotes"]
     with open(__convertion_rates_file_name, 'w') as json_file:
         json.dump(__convertion_rates, json_file)

@@ -8,9 +8,21 @@ A tool which calculates the amount of super chats of a previous Youtube live str
 
 Fill your CurrencyLayer API Key in `config.ini`
 
+`pip install -r char-replay-downloader/requirements.txt`
+
+### Linux
+
+`chmod +x run.bash`
+
 ## Usage
 
-`.\run.ps1 https://www.youtube.com/watch?v=97w16cYskVI`
+### Windows
+
+`run.ps1 https://www.youtube.com/watch?v=97w16cYskVI`
+
+### Linux
+
+`run.bash https://www.youtube.com/watch?v=97w16cYskVI`
 
 Output:
 
