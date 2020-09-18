@@ -19,4 +19,4 @@ Write-Output ("UUID: " + $uuid)
 
 python (Join-Path $PSScriptRoot "chat-replay-downloader/chat_replay_downloader.py") $URL -message_type superchat -output $rawDataFilepath | Out-Null
 
-python (Join-Path $PSScriptRoot "process.py") $config.CURRENCYLAYER_API_KEY $rawDataFilepath $calculatedFilepath -c (Join-Path $PSScriptRoot $config.CURRENCY_FILE_NAME)
+python (Join-Path $PSScriptRoot "process.py") $config.CURRENCYLAYER_API_KEY $rawDataFilepath $calculatedFilepath -c (Join-Path $PSScriptRoot $config.CURRENCY_FILE_NAME) -t $config.TARGET_CURRENCY
