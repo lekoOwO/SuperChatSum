@@ -16,7 +16,7 @@ calculatedFilepath="$output_dir/$uuid.calc.json"
 
 URL=$1
 
-echo "UUID:$uuid"
+echo -e "UUID:$uuid\n"
 
 python "$DIR/chat-replay-downloader/chat_replay_downloader.py" "$URL" -message_type superchat -output "$rawDataFilepath" > /dev/null
 

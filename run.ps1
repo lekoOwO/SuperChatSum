@@ -16,6 +16,7 @@ $calculatedFilepath = Join-Path $output_dir ($uuid + ".calc.json")
 $URL = $Args[0]
 
 Write-Output ("UUID: " + $uuid)
+Write-Output ""
 
 python (Join-Path $PSScriptRoot "chat-replay-downloader/chat_replay_downloader.py") $URL -message_type superchat -output $rawDataFilepath | Out-Null
 

@@ -28,5 +28,12 @@ Output:
 
 ```
 UUID: b80f4c8d-0859-45c4-96a6-cc70bf901e13
-Sum: 950076.67234848 TWD
+
+Total: 946131.1919 TWD
+2857 super chats received.
+0 super stickers received.
+
+
+Max: 10687.9046 TWD (500 SGD)
+Min: 5.4002 TWD (0.99 BRL)
 ```
