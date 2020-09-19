@@ -64,8 +64,6 @@ membership_count = 0
 with open(FILE_NAME) as f:
     datas = json.load(f)
 
-    super_chat_count = len(datas)
-
     for data in datas:
         if "is_ticker" in data:
             continue
@@ -74,6 +72,7 @@ with open(FILE_NAME) as f:
         elif "is_sticker" in data:
             super_sticker_count += 1
         elif "amount" in data:
+            super_chat_count += 1
             currency, amount = get_currency_and_amount(data['amount'])
             result[currency] = result.get(currency, 0.0) + float(amount)
             if currency not in super_chat_max_amounts or super_chat_max_amounts[currency] < float(amount):
