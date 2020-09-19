@@ -6,5 +6,7 @@
     "R$": "BRL",
     "A$": "AUD",
     "MX$": "MXN",
-    "NT$": "TWD"
+    "NT$": "TWD",
+    "\u20a9": "KRW",
+    "\u20b9": "INR"
 }
