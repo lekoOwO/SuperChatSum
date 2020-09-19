@@ -27,13 +27,14 @@ Fill your CurrencyLayer API Key in `config.ini`
 Output:
 
 ```
-UUID: b80f4c8d-0859-45c4-96a6-cc70bf901e13
+UUID: 2d48c0cf-22d1-4d84-8c9d-40ec64f21f9e
 
-Total: 946131.1919 TWD
-2857 super chats received.
-0 super stickers received.
+Total: 478211.4029 TWD
+1564 super chats received.
+29 super stickers received.
+0 new subscribers received.
 
 
-Max: 10687.9046 TWD (500 SGD)
-Min: 5.4002 TWD (0.99 BRL)
+Max: 10676.5538 TWD (500 SGD)
+Min: 7.6974 TWD (1.43 BRL)
 ```
