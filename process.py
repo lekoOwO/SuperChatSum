@@ -59,6 +59,7 @@ super_chat_max_amounts = {}
 super_chat_min_amounts = {}
 super_chat_count = 0
 super_sticker_count = 0
+membership_count = 0
 
 with open(FILE_NAME) as f:
     datas = json.load(f)
@@ -66,7 +67,13 @@ with open(FILE_NAME) as f:
     super_chat_count = len(datas)
 
     for data in datas:
-        if "amount" in data:
+        if "is_ticker" in data:
+            continue
+        elif "is_membership" in data:
+            membership_count += 1
+        elif "is_sticker" in data:
+            super_sticker_count += 1
+        elif "amount" in data:
             currency, amount = get_currency_and_amount(data['amount'])
             result[currency] = result.get(currency, 0.0) + float(amount)
             if currency not in super_chat_max_amounts or super_chat_max_amounts[currency] < float(amount):
@@ -79,8 +86,6 @@ with open(FILE_NAME) as f:
                 # 如果是整數就換成 int 型態
                 if super_chat_min_amounts[currency].is_integer():
                     super_chat_min_amounts[currency] = int(super_chat_max_amounts[currency])
-        elif "ticker_duration" in data:
-            super_sticker_count += 1
 
 with open(OUTPUT_NAME, 'w', encoding='utf8') as json_file:
     json.dump(result, json_file, ensure_ascii=False)
@@ -131,6 +136,7 @@ with open(CURRENCY_CONVERT_FILE, encoding='utf8') as f:
     print(f"Total: {'%.4f' % sum} {TARGET_CURRENCY}")
     print(f"{super_chat_count} super chats received.")
     print(f"{super_sticker_count} super stickers received.")
+    print(f"{membership_count} new subscribers received.")
     print("\n")
     print(
         f"Max: {'%.4f' % converted_max['amount']} {TARGET_CURRENCY} ({converted_max['original_amount']})")

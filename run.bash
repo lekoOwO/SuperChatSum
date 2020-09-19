@@ -19,5 +19,4 @@ URL=$1
 echo -e "UUID:$uuid\n"
 
 python "$DIR/chat-replay-downloader/chat_replay_downloader.py" "$URL" -message_type superchat -output "$rawDataFilepath" > /dev/null
-
 python "$DIR/process.py" "$CURRENCYLAYER_API_KEY" "$rawDataFilepath" "$calculatedFilepath" -c "$DIR/$CURRENCY_FILE_NAME" -t "$TARGET_CURRENCY"
